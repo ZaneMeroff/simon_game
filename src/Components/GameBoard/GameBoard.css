@@ -1,0 +1,40 @@
+.gameboard-outer-container {
+  border: 2px solid black;
+  width: 400px;
+  height: 400px;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.red-box,
+.green-box,
+.blue-box,
+.yellow-box {
+  height: 200px;
+  width: 200px;
+}
+
+.red-box {
+  background-color: red;
+}
+
+.green-box {
+  background-color: green;
+}
+
+.blue-box {
+  background-color: blue;
+}
+
+.yellow-box {
+  background-color: yellow;
+}
+
+.top-section,
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+}
