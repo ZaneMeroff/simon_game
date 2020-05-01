@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import './GameBoard.css';
 
@@ -10,15 +10,33 @@ const GameBoard = () => {
   const [blueActive, setBlueActive] = useState(false);
 
   const [roundCount, setRoundCount] = useState(1);
+  const [randomNumArray, setRandomNumArray] = useState([])
 
-  useEffect(() => {
+  const colorKey = {
+    0 : redActive,
+    1 : yellowActive,
+    2 : greenActive,
+    3 : blueActive
+  }
+
+  const startGame = () => {
+    addRandomNumber()
     blinkColors();
-  });
+  }
 
   const blinkColors = () => {
     setTimeout(() => {
       setRedActive(true)
     }, 2000)
+
+    setTimeout(() => {
+      setRedActive(false)
+    }, 4000)
+
+  }
+
+  const addRandomNumber = () => {
+    setRandomNumArray([...randomNumArray, randomNum()])
   }
 
   const generateRandomNums = roundNumber => {
@@ -47,7 +65,7 @@ const GameBoard = () => {
 
   return (
     <>
-    <ScoreBoard roundCount={roundCount}/>
+    <ScoreBoard roundCount={roundCount} startGame={startGame}/>
     <div className="gameboard-outer-container">
       <div className='center-circle'></div>
       <div className='top-section'>
