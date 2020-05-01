@@ -29,7 +29,7 @@ const GameBoard = () => {
     randomNumArray = []
     playerResponse = []
     playerClickCounter = 0
-    randomNumArray.push(randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum())
+    randomNumArray.push(randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum())
     setMyOrYours('MY')
     setTurnText('TURN!')
     startRound1();
@@ -95,6 +95,45 @@ const GameBoard = () => {
       playerResponse = []
       setTimeout(() => {
         startRound7();
+      }, 1000)
+      return
+    }
+    if (roundCount === 7 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6]) {
+      setMyOrYours('RIGHT!')
+      setTurnText('')
+      increaseRoundCount();
+      playerResponse = []
+      setTimeout(() => {
+        startRound8();
+      }, 1000)
+      return
+    }
+    if (roundCount === 8 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7]) {
+      setMyOrYours('RIGHT!')
+      setTurnText('')
+      increaseRoundCount();
+      playerResponse = []
+      setTimeout(() => {
+        startRound9();
+      }, 1000)
+      return
+    }
+    if (roundCount === 9 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7] && playerResponse[8] === randomNumArray[8]) {
+      setMyOrYours('RIGHT!')
+      setTurnText('')
+      increaseRoundCount();
+      playerResponse = []
+      setTimeout(() => {
+        startRound10();
+      }, 1000)
+      return
+    }
+    if (roundCount === 10 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7] && playerResponse[8] === randomNumArray[8] && playerResponse[9] === randomNumArray[9]) {
+      setMyOrYours('RIGHT!')
+      playerResponse = []
+      setTimeout(() => {
+        setMyOrYours('YOU')
+        setTurnText('WIN!')
       }, 1000)
       return
     } else {
@@ -313,6 +352,186 @@ const GameBoard = () => {
     }, 14000)
   }
 
+  const startRound8 = () => {
+    setMyOrYours('MY')
+    setTurnText('TURN!')
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](true)
+    }, 1000)
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](false)
+    }, 2000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](true)
+    }, 3000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](false)
+    }, 4000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](true)
+    }, 5000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](false)
+    }, 6000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](true)
+    }, 7000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](false)
+    }, 8000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](true)
+    }, 9000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](false)
+    }, 10000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](true)
+    }, 11000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](false)
+    }, 12000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](true)
+    }, 13000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](false)
+    }, 14000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](true)
+    }, 15000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](false)
+      setMyOrYours('YOUR')
+    }, 16000)
+  }
+
+  const startRound9 = () => {
+    setMyOrYours('MY')
+    setTurnText('TURN!')
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](true)
+    }, 1000)
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](false)
+    }, 2000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](true)
+    }, 3000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](false)
+    }, 4000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](true)
+    }, 5000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](false)
+    }, 6000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](true)
+    }, 7000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](false)
+    }, 8000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](true)
+    }, 9000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](false)
+    }, 10000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](true)
+    }, 11000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](false)
+    }, 12000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](true)
+    }, 13000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](false)
+    }, 14000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](true)
+    }, 15000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](false)
+    }, 16000)
+    setTimeout(() => {
+      colorKey[randomNumArray[8]](true)
+    }, 17000)
+    setTimeout(() => {
+      colorKey[randomNumArray[8]](false)
+      setMyOrYours('YOUR')
+    }, 18000)
+  }
+
+  const startRound10 = () => {
+    setMyOrYours('MY')
+    setTurnText('TURN!')
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](true)
+    }, 1000)
+    setTimeout(() => {
+      colorKey[randomNumArray[0]](false)
+    }, 2000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](true)
+    }, 3000)
+    setTimeout(() => {
+      colorKey[randomNumArray[1]](false)
+    }, 4000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](true)
+    }, 5000)
+    setTimeout(() => {
+      colorKey[randomNumArray[2]](false)
+    }, 6000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](true)
+    }, 7000)
+    setTimeout(() => {
+      colorKey[randomNumArray[3]](false)
+    }, 8000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](true)
+    }, 9000)
+    setTimeout(() => {
+      colorKey[randomNumArray[4]](false)
+    }, 10000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](true)
+    }, 11000)
+    setTimeout(() => {
+      colorKey[randomNumArray[5]](false)
+    }, 12000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](true)
+    }, 13000)
+    setTimeout(() => {
+      colorKey[randomNumArray[6]](false)
+    }, 14000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](true)
+    }, 15000)
+    setTimeout(() => {
+      colorKey[randomNumArray[7]](false)
+    }, 16000)
+    setTimeout(() => {
+      colorKey[randomNumArray[8]](true)
+    }, 17000)
+    setTimeout(() => {
+      colorKey[randomNumArray[8]](false)
+    }, 18000)
+    setTimeout(() => {
+      colorKey[randomNumArray[9]](true)
+    }, 19000)
+    setTimeout(() => {
+      colorKey[randomNumArray[9]](false)
+      setMyOrYours('YOUR')
+    }, 20000)
+  }
+
   const increaseRoundCount = () => {
     setRoundCount(roundCount + 1)
   }
@@ -343,6 +562,15 @@ const GameBoard = () => {
       validateAnswer();
     }
     if (roundCount === 7 && playerClickCounter === 28) {
+      validateAnswer();
+    }
+    if (roundCount === 8 && playerClickCounter === 36) {
+      validateAnswer();
+    }
+    if (roundCount === 9 && playerClickCounter === 45) {
+      validateAnswer();
+    }
+    if (roundCount === 10 && playerClickCounter === 55) {
       validateAnswer();
     }
   }
