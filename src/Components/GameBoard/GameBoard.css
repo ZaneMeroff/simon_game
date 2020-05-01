@@ -49,6 +49,10 @@
   border: 3px solid #232323;
 }
 
+.red-box:active {
+  background-color: #FFF;
+}
+
 .red-box:hover {
   cursor: pointer;
   opacity: 1;
@@ -65,6 +69,10 @@
   opacity: .3;
   border-top-right-radius: 200px;
   border: 3px solid #232323;
+}
+
+.green-box:active {
+  background-color: #FFF;
 }
 
 .green-box:hover {
@@ -85,6 +93,10 @@
   border: 3px solid #232323;
 }
 
+.blue-box:active {
+  background-color: #FFF;
+}
+
 .blue-box:hover {
   cursor: pointer;
   opacity: 1;
@@ -101,6 +113,10 @@
   opacity: .3;
   border-bottom-left-radius: 200px;
   border: 3px solid #232323;
+}
+
+.yellow-box:active {
+  background-color: #FFF;
 }
 
 .yellow-box:hover {
