@@ -1,4 +1,20 @@
 .scoreboard-outer-container {
-  border: 2px solid black;
+  border: 2px solid #FFF;
   width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.new-game-button {
+  height: 40px;
+}
+
+.new-game-button:hover {
+  cursor: pointer;
+  background-color: yellow;
+}
+
+.round-display {
+  color: #FFF;
 }
