@@ -1,3 +1,7 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
 .gameboard-outer-container {
   width: 400px;
   height: 400px;
@@ -16,6 +20,18 @@
   background-color: #232323;
   position: absolute;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.turn-text-1 {
+  margin-bottom: 0px;
+  color: #FFF;
+}
+
+.turn-text-2 {
+  color: #FFF;
 }
 
 .red-box,
@@ -33,6 +49,11 @@
   border: 3px solid #232323;
 }
 
+.red-box:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .red-active {
   opacity: 1;
   box-shadow: 0 0 40px 20px red;
@@ -44,6 +65,11 @@
   opacity: .3;
   border-top-right-radius: 200px;
   border: 3px solid #232323;
+}
+
+.green-box:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .green-active {
@@ -59,6 +85,11 @@
   border: 3px solid #232323;
 }
 
+.blue-box:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .blue-active {
   opacity: 1;
   box-shadow: 0 0 40px 20px #006bff;
@@ -70,6 +101,11 @@
   opacity: .3;
   border-bottom-left-radius: 200px;
   border: 3px solid #232323;
+}
+
+.yellow-box:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .yellow-active {
