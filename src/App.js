@@ -5,7 +5,7 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <h1 className='game-title-text'>The Game of Simon 🎮</h1>
+      <h1 className='game-title-text'>Mr. Simon</h1>
       <GameBoard />
     </div>
   );
