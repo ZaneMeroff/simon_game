@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ScoreBoard.css';
 
-class ScoreBoard extends Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
+const ScoreBoard = props => {
 
-  render() {
-    return (
-      <div className="scoreboard-outer-container">
-        <h3>ROUND: 1</h3>
-      </div>
-    );
-  }
+  return (
+    <div className="scoreboard-outer-container">
+      <h3 className='round-display'>ROUND: {props.roundCount}</h3>
+      <button className='new-game-button'>NEW GAME</button>
+    </div>
+  );
+
 }
 
 export default ScoreBoard;
