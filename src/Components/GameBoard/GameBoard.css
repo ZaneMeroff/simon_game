@@ -35,6 +35,8 @@
 
 .red-active {
   opacity: 1;
+  box-shadow: 0 0 40px 20px red;
+  border: 3px solid red;
 }
 
 .green-box {
@@ -46,6 +48,8 @@
 
 .green-active {
   opacity: 1;
+  box-shadow: 0 0 40px 20px #00ff00;
+  border: 3px solid #00ff00;
 }
 
 .blue-box {
@@ -57,6 +61,8 @@
 
 .blue-active {
   opacity: 1;
+  box-shadow: 0 0 40px 20px #006bff;
+  border: 3px solid #006bff;
 }
 
 .yellow-box {
@@ -66,8 +72,10 @@
   border: 3px solid #232323;
 }
 
-.yello-active {
+.yellow-active {
   opacity: 1;
+  box-shadow: 0 0 40px 20px yellow;
+  border: 3px solid yellow;
 }
 
 .top-section,
