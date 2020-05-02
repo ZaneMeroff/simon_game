@@ -9,7 +9,7 @@ const ScoreBoard = props => {
         <h3 className='round-display'>ROUND: {props.roundCount}</h3>
         <h3 className='round-display'>MOVES: {props.playerClickDisplay}/{props.roundCount}</h3>
       </div>
-      <button onClick={props.startGame} className='new-game-button'>NEW GAME</button>
+      <button onClick={props.startGame} className='new-game-button'>{props.randomNumArray.length !== 0 ? 'NEW GAME' : 'START GAME'}</button>
     </div>
   );
 
