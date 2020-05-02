@@ -1,5 +1,4 @@
 .scoreboard-outer-container {
-  /* border: 3px dotted #FFF; */
   width: auto;
   display: flex;
   justify-content: space-around;
@@ -20,7 +19,9 @@
 
 .new-game-button:hover {
   cursor: pointer;
-  box-shadow: 0 0 20px 5px #FFF;
+  color: #232323;
+  background-color: #FFF;
+  border: 3px dotted #232323;
 }
 
 .round-display {
