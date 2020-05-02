@@ -49,16 +49,13 @@
   border: 3px solid #232323;
 }
 
-.red-box:active {
-  background-color: #FFF;
-}
-
 .red-box:hover {
   cursor: pointer;
   box-shadow: inset 0 0 10px 10px #FFF;
 }
 
-.red-active {
+.red-active,
+.red-box:active {
   opacity: 1;
   box-shadow: 0 0 40px 20px red;
   border: 3px solid red;
@@ -71,16 +68,13 @@
   border: 3px solid #232323;
 }
 
-.green-box:active {
-  background-color: #FFF;
-}
-
 .green-box:hover {
   cursor: pointer;
   box-shadow: inset 0 0 10px 10px #FFF;
 }
 
-.green-active {
+.green-active,
+.green-box:active {
   opacity: 1;
   box-shadow: 0 0 40px 20px #00ff00;
   border: 3px solid #00ff00;
@@ -93,16 +87,13 @@
   border: 3px solid #232323;
 }
 
-.blue-box:active {
-  background-color: #FFF;
-}
-
 .blue-box:hover {
   cursor: pointer;
   box-shadow: inset 0 0 10px 10px #FFF;
 }
 
-.blue-active {
+.blue-active,
+.blue-box:active {
   opacity: 1;
   box-shadow: 0 0 40px 20px #006bff;
   border: 3px solid #006bff;
@@ -115,16 +106,13 @@
   border: 3px solid #232323;
 }
 
-.yellow-box:active {
-  background-color: #FFF;
-}
-
 .yellow-box:hover {
   cursor: pointer;
   box-shadow: inset 0 0 10px 10px #FFF;
 }
 
-.yellow-active {
+.yellow-active,
+.yellow-box:active {
   opacity: 1;
   box-shadow: 0 0 40px 20px yellow;
   border: 3px solid yellow;
