@@ -118,6 +118,10 @@
   border: 3px solid yellow;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .top-section,
 .bottom-section {
   display: flex;
