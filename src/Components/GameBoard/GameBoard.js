@@ -28,118 +28,32 @@ const GameBoard = () => {
 
   const startGame = () => {
     randomNumArray = generate10randomNumbers();
-    playerResponse = []
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
+    roundCount = 1;
+    playerResponse = [];
+    playerClickCounter = 0;
+    setPlayerClickDisplay(0);
+    setMyOrYours('MY');
+    setTurnText('TURN!');
     startRound1();
   }
 
   const validateAnswer = () => {
-    if (roundCount === 1 && playerResponse[0] === randomNumArray[0]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 2 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 3 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 4 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 5 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 6 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 7 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 8 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 9 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7] && playerResponse[8] === randomNumArray[8]) {
-      setMyOrYours('RIGHT!')
-      setTurnText('')
-      setDisableButtons(true)
-      playerResponse = []
-      setTimeout(() => {
-        nextRound();
-      }, 1000)
-      return
-    }
-    if (roundCount === 10 && playerResponse[0] === randomNumArray[0] && playerResponse[1] === randomNumArray[1] && playerResponse[2] === randomNumArray[2] && playerResponse[3] === randomNumArray[3] && playerResponse[4] === randomNumArray[4] && playerResponse[5] === randomNumArray[5] && playerResponse[6] === randomNumArray[6] && playerResponse[7] === randomNumArray[7] && playerResponse[8] === randomNumArray[8] && playerResponse[9] === randomNumArray[9]) {
-      setMyOrYours('RIGHT!')
-      playerResponse = []
-      setDisableButtons(true)
-      setTimeout(() => {
-        setMyOrYours('YOU')
-        setTurnText('WIN!')
-      }, 1000)
-      return
-    } else {
-      setMyOrYours('GAME')
-      setTurnText('OVER!')
-      setDisableButtons(true)
+    for (let i = 0; i < playerResponse.length; i++) {
+      if (playerResponse[i] === randomNumArray[i]) {
+        if ( i === (playerResponse.length - 1)) {
+          setMyOrYours('RIGHT!')
+          setTurnText('')
+          setDisableButtons(true)
+          playerResponse = []
+          setTimeout(() => {
+            nextRound();
+          }, 1000)
+        }
+      } else {
+        setMyOrYours('GAME')
+        setTurnText('OVER!')
+        setDisableButtons(true)
+      }
     }
   }
 
