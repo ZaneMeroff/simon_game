@@ -5,6 +5,7 @@ import './GameBoard.css';
 let randomNumArray = []
 let playerResponse = []
 let playerClickCounter = 0
+let roundCount = 1
 
 const GameBoard = () => {
 
@@ -13,7 +14,7 @@ const GameBoard = () => {
   const [greenActive, setGreenActive] = useState(false);
   const [blueActive, setBlueActive] = useState(false);
 
-  const [roundCount, setRoundCount] = useState(1);
+  // const [roundCount, setRoundCount] = useState(1);
   const [myOrYours, setMyOrYours] = useState('');
   const [turnText, setTurnText] = useState('');
   const [playerClickDisplay, setPlayerClickDisplay] = useState(0);
@@ -27,12 +28,11 @@ const GameBoard = () => {
   }
 
   const startGame = () => {
-    setRoundCount(1)
-    randomNumArray = []
+    // setRoundCount(1)
+    randomNumArray = generate10randomNumbers();
     playerResponse = []
     playerClickCounter = 0
     setPlayerClickDisplay(0)
-    randomNumArray.push(randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum())
     setMyOrYours('MY')
     setTurnText('TURN!')
     startRound1();
@@ -164,20 +164,43 @@ const GameBoard = () => {
     setPlayerClickDisplay(0)
     setMyOrYours('MY')
     setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 3200)
+
+    let j = 0
+
+    for (let i = 1; i <= (roundCount * 2); i++) {
+
+      setTimeout(() => {
+
+        if (i % 2 !== 0) {
+          colorKey[randomNumArray[Math.floor(j)]](true)
+        } else {
+          colorKey[randomNumArray[Math.floor(j)]](false)
+        }
+
+        j += 0.5
+
+        if (i === (roundCount * 2)) {
+          setMyOrYours('YOUR')
+          setDisableButtons(false)
+        }
+
+      }, i * 800 )
+    }
+
+    // setTimeout(() => {
+    //   colorKey[randomNumArray[0]](true)
+    // }, 1000)
+    // setTimeout(() => {
+    //   colorKey[randomNumArray[0]](false)
+    // }, 2000)
+    // setTimeout(() => {
+    //   colorKey[randomNumArray[1]](true)
+    // }, 3000)
+    // setTimeout(() => {
+    //   colorKey[randomNumArray[1]](false)
+    //   setMyOrYours('YOUR')
+    //   setDisableButtons(false)
+    // }, 4000)
   }
 
   const startRound3 = () => {
@@ -573,45 +596,22 @@ const GameBoard = () => {
   }
 
   const increaseRoundCount = () => {
-    setRoundCount(roundCount + 1)
+    roundCount += 1
   }
 
-  const randomNum = () => {
-    return Math.floor(Math.random() * 4)
+  const generate10randomNumbers = () => {
+    let randomArray = []
+    for (let i = 0; i < 10; i++) {
+      randomArray.push(Math.floor(Math.random() * 4))
+    }
+    return randomArray
   }
 
   const handlePlayerResponse = colorNum => {
     playerResponse.push(colorNum)
     playerClickCounter++
     setPlayerClickDisplay(playerClickDisplay + 1)
-    if (roundCount === 1 && playerClickCounter === 1) {
-      validateAnswer();
-    }
-    if (roundCount === 2 && playerClickCounter === 2) {
-      validateAnswer();
-    }
-    if (roundCount === 3 && playerClickCounter === 3) {
-      validateAnswer();
-    }
-    if (roundCount === 4 && playerClickCounter === 4) {
-      validateAnswer();
-    }
-    if (roundCount === 5 && playerClickCounter === 5) {
-      validateAnswer();
-    }
-    if (roundCount === 6 && playerClickCounter === 6) {
-      validateAnswer();
-    }
-    if (roundCount === 7 && playerClickCounter === 7) {
-      validateAnswer();
-    }
-    if (roundCount === 8 && playerClickCounter === 8) {
-      validateAnswer();
-    }
-    if (roundCount === 9 && playerClickCounter === 9) {
-      validateAnswer();
-    }
-    if (roundCount === 10 && playerClickCounter === 10) {
+    if (roundCount === playerClickCounter) {
       validateAnswer();
     }
   }
