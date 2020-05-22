@@ -2,9 +2,9 @@
   "name": "simon",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zanemeroff.github.io/simon_game",
   "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
+    "node": ">=10.0.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
