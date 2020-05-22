@@ -6,6 +6,7 @@ let randomNumArray = []
 let playerResponse = []
 let playerClickCounter = 0
 let roundCount = 1
+let j;
 
 const GameBoard = () => {
 
@@ -42,7 +43,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -52,7 +53,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -62,7 +63,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -72,7 +73,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -82,7 +83,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -92,7 +93,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -102,7 +103,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -112,7 +113,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -122,7 +123,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound();
+        nextRound();
       }, 1000)
       return
     }
@@ -153,31 +154,31 @@ const GameBoard = () => {
     }, 1600)
   }
 
-  const startRound = () => {
-    increaseRoundCount();
+  const nextRound = () => {
+    roundCount++
     playerClickCounter = 0
     setPlayerClickDisplay(0)
     setMyOrYours('MY')
     setTurnText('TURN!')
-    let j = 0
+    j = 0
     for (let i = 1; i <= (roundCount * 2); i++) {
-      setTimeout(() => {
-        if (i % 2 !== 0) {
-          colorKey[randomNumArray[Math.floor(j)]](true)
-        } else {
-          colorKey[randomNumArray[Math.floor(j)]](false)
-        }
-        j += 0.5
-        if (i === (roundCount * 2)) {
-          setMyOrYours('YOUR')
-          setDisableButtons(false)
-        }
-      }, i * 800 )
+      makeColorFlash(i)
     }
   }
 
-  const increaseRoundCount = () => {
-    roundCount += 1
+  const makeColorFlash = i => {
+    setTimeout(() => {
+      if (i % 2 !== 0) {
+        colorKey[randomNumArray[Math.floor(j)]](true)
+      } else {
+        colorKey[randomNumArray[Math.floor(j)]](false)
+      }
+      j += 0.5
+      if (i === (roundCount * 2)) {
+        setMyOrYours('YOUR')
+        setDisableButtons(false)
+      }
+    }, i * 800 )
   }
 
   const generate10randomNumbers = () => {
