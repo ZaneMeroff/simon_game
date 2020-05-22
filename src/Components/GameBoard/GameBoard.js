@@ -6,6 +6,7 @@ let randomNumArray = []
 let playerResponse = []
 let playerClickCounter = 0
 let roundCount = 1
+let j;
 
 const GameBoard = () => {
 
@@ -13,8 +14,6 @@ const GameBoard = () => {
   const [yellowActive, setYellowActive] = useState(false);
   const [greenActive, setGreenActive] = useState(false);
   const [blueActive, setBlueActive] = useState(false);
-
-  // const [roundCount, setRoundCount] = useState(1);
   const [myOrYours, setMyOrYours] = useState('');
   const [turnText, setTurnText] = useState('');
   const [playerClickDisplay, setPlayerClickDisplay] = useState(0);
@@ -28,7 +27,6 @@ const GameBoard = () => {
   }
 
   const startGame = () => {
-    // setRoundCount(1)
     randomNumArray = generate10randomNumbers();
     playerResponse = []
     playerClickCounter = 0
@@ -39,15 +37,13 @@ const GameBoard = () => {
   }
 
   const validateAnswer = () => {
-    // console.log('random num array: ', randomNumArray);
-    // console.log('playerResponse: ', playerResponse);
     if (roundCount === 1 && playerResponse[0] === randomNumArray[0]) {
       setMyOrYours('RIGHT!')
       setTurnText('')
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound2();
+        nextRound();
       }, 1000)
       return
     }
@@ -57,7 +53,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound3();
+        nextRound();
       }, 1000)
       return
     }
@@ -67,7 +63,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound4();
+        nextRound();
       }, 1000)
       return
     }
@@ -77,7 +73,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound5();
+        nextRound();
       }, 1000)
       return
     }
@@ -87,7 +83,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound6();
+        nextRound();
       }, 1000)
       return
     }
@@ -97,7 +93,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound7();
+        nextRound();
       }, 1000)
       return
     }
@@ -107,7 +103,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound8();
+        nextRound();
       }, 1000)
       return
     }
@@ -117,7 +113,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound9();
+        nextRound();
       }, 1000)
       return
     }
@@ -127,7 +123,7 @@ const GameBoard = () => {
       setDisableButtons(true)
       playerResponse = []
       setTimeout(() => {
-        startRound10();
+        nextRound();
       }, 1000)
       return
     }
@@ -158,445 +154,31 @@ const GameBoard = () => {
     }, 1600)
   }
 
-  const startRound2 = () => {
-    increaseRoundCount();
+  const nextRound = () => {
+    roundCount++
     playerClickCounter = 0
     setPlayerClickDisplay(0)
     setMyOrYours('MY')
     setTurnText('TURN!')
-
-    let j = 0
-
+    j = 0
     for (let i = 1; i <= (roundCount * 2); i++) {
-
-      setTimeout(() => {
-
-        if (i % 2 !== 0) {
-          colorKey[randomNumArray[Math.floor(j)]](true)
-        } else {
-          colorKey[randomNumArray[Math.floor(j)]](false)
-        }
-
-        j += 0.5
-
-        if (i === (roundCount * 2)) {
-          setMyOrYours('YOUR')
-          setDisableButtons(false)
-        }
-
-      }, i * 800 )
+      makeColorFlash(i)
     }
-
-    // setTimeout(() => {
-    //   colorKey[randomNumArray[0]](true)
-    // }, 1000)
-    // setTimeout(() => {
-    //   colorKey[randomNumArray[0]](false)
-    // }, 2000)
-    // setTimeout(() => {
-    //   colorKey[randomNumArray[1]](true)
-    // }, 3000)
-    // setTimeout(() => {
-    //   colorKey[randomNumArray[1]](false)
-    //   setMyOrYours('YOUR')
-    //   setDisableButtons(false)
-    // }, 4000)
   }
 
-  const startRound3 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 4800)
-  }
-
-  const startRound4 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 6400)
-  }
-
-  const startRound5 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 8000)
-  }
-
-  const startRound6 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-    }, 8000)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](true)
-    }, 8800)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 9600)
-  }
-
-  const startRound7 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-    }, 8000)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](true)
-    }, 8800)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](false)
-    }, 9600)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](true)
-    }, 10400)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 11200)
-  }
-
-  const startRound8 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-    }, 8000)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](true)
-    }, 8800)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](false)
-    }, 9600)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](true)
-    }, 10400)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](false)
-    }, 11200)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](true)
-    }, 12000)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 12800)
-  }
-
-  const startRound9 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-    }, 8000)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](true)
-    }, 8800)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](false)
-    }, 9600)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](true)
-    }, 10400)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](false)
-    }, 11200)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](true)
-    }, 12000)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](false)
-    }, 12800)
-    setTimeout(() => {
-      colorKey[randomNumArray[8]](true)
-    }, 13600)
-    setTimeout(() => {
-      colorKey[randomNumArray[8]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 14400)
-  }
-
-  const startRound10 = () => {
-    increaseRoundCount();
-    playerClickCounter = 0
-    setPlayerClickDisplay(0)
-    setMyOrYours('MY')
-    setTurnText('TURN!')
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](true)
-    }, 800)
-    setTimeout(() => {
-      colorKey[randomNumArray[0]](false)
-    }, 1600)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](true)
-    }, 2400)
-    setTimeout(() => {
-      colorKey[randomNumArray[1]](false)
-    }, 3200)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](true)
-    }, 4000)
-    setTimeout(() => {
-      colorKey[randomNumArray[2]](false)
-    }, 4800)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](true)
-    }, 5600)
-    setTimeout(() => {
-      colorKey[randomNumArray[3]](false)
-    }, 6400)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](true)
-    }, 7200)
-    setTimeout(() => {
-      colorKey[randomNumArray[4]](false)
-    }, 8000)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](true)
-    }, 8800)
-    setTimeout(() => {
-      colorKey[randomNumArray[5]](false)
-    }, 9600)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](true)
-    }, 10400)
-    setTimeout(() => {
-      colorKey[randomNumArray[6]](false)
-    }, 11200)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](true)
-    }, 12000)
-    setTimeout(() => {
-      colorKey[randomNumArray[7]](false)
-    }, 12800)
-    setTimeout(() => {
-      colorKey[randomNumArray[8]](true)
-    }, 13600)
-    setTimeout(() => {
-      colorKey[randomNumArray[8]](false)
-    }, 14400)
-    setTimeout(() => {
-      colorKey[randomNumArray[9]](true)
-    }, 15200)
-    setTimeout(() => {
-      colorKey[randomNumArray[9]](false)
-      setMyOrYours('YOUR')
-      setDisableButtons(false)
-    }, 16000)
-  }
-
-  const increaseRoundCount = () => {
-    roundCount += 1
+  const makeColorFlash = i => {
+    setTimeout(() => {
+      if (i % 2 !== 0) {
+        colorKey[randomNumArray[Math.floor(j)]](true)
+      } else {
+        colorKey[randomNumArray[Math.floor(j)]](false)
+      }
+      j += 0.5
+      if (i === (roundCount * 2)) {
+        setMyOrYours('YOUR')
+        setDisableButtons(false)
+      }
+    }, i * 800 )
   }
 
   const generate10randomNumbers = () => {
