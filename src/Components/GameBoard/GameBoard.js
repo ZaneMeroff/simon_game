@@ -38,23 +38,45 @@ const GameBoard = () => {
   }
 
   const validateAnswer = () => {
+    console.log('answers: ', randomNumArray );
+    console.log('response: ', playerResponse );
+    let correctSoFar = true;
     for (let i = 0; i < playerResponse.length; i++) {
-      if (playerResponse[i] === randomNumArray[i]) {
-        if ( i === (playerResponse.length - 1)) {
-          setMyOrYours('RIGHT!');
-          setTurnText('');
-          setDisableButtons(true);
-          playerResponse = [];
-          setTimeout(() => {
-            nextRound();
-          }, 1000)
-        }
+      if (playerResponse[i] === randomNumArray[i] && correctSoFar === true) {
+        correctSoFar = true;
+
+        // if ( i === (playerResponse.length - 1) && correctSoFar === true) {
+        //   onCorrectRoundGuess();
+        //
+        // } else {
+        //   gameOver();
+        // }
+
       } else {
-        setMyOrYours('GAME');
-        setTurnText('OVER!');
-        setDisableButtons(true);
+        correctSoFar = false;
       }
     }
+    if (correctSoFar === true) {
+      onCorrectRoundGuess();
+    } else {
+      gameOver();
+    }
+  }
+
+  const gameOver = () => {
+    setMyOrYours('GAME');
+    setTurnText('OVER!');
+    setDisableButtons(true);
+  }
+
+  const onCorrectRoundGuess = () => {
+    setMyOrYours('RIGHT!');
+    setTurnText('');
+    setDisableButtons(true);
+    playerResponse = [];
+    setTimeout(() => {
+      nextRound();
+    }, 1000)
   }
 
   const nextRound = () => {
