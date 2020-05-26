@@ -68,15 +68,25 @@ const GameBoard = () => {
   }
 
   const nextRound = () => {
-    roundCount++
-    playerClickCounter = 0
-    setPlayerClickDisplay(0);
-    setMyOrYours('MY');
-    setTurnText('TURN!');
-    j = 0;
-    for (let i = 1; i <= (roundCount * 2); i++) {
-      makeColorFlash(i);
+    if (roundCount === 10) {
+      displayWinningMessage();
+    } else {
+      roundCount++
+      playerClickCounter = 0
+      setPlayerClickDisplay(0);
+      setMyOrYours('MY');
+      setTurnText('TURN!');
+      j = 0;
+      for (let i = 1; i <= (roundCount * 2); i++) {
+        makeColorFlash(i);
+      }
     }
+  }
+
+  const displayWinningMessage = () => {
+    setMyOrYours('YOU');
+    setTurnText('WIN!');
+    setDisableButtons(true);
   }
 
   const makeColorFlash = i => {
