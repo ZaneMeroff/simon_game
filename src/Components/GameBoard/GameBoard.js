@@ -38,25 +38,13 @@ const GameBoard = () => {
   }
 
   const validateAnswer = () => {
-    console.log('answers: ', randomNumArray );
-    console.log('response: ', playerResponse );
     let correctSoFar = true;
     for (let i = 0; i < playerResponse.length; i++) {
-      if (playerResponse[i] === randomNumArray[i] && correctSoFar === true) {
-        correctSoFar = true;
-
-        // if ( i === (playerResponse.length - 1) && correctSoFar === true) {
-        //   onCorrectRoundGuess();
-        //
-        // } else {
-        //   gameOver();
-        // }
-
-      } else {
+      if (playerResponse[i] !== randomNumArray[i] && correctSoFar) {
         correctSoFar = false;
       }
     }
-    if (correctSoFar === true) {
+    if (correctSoFar) {
       onCorrectRoundGuess();
     } else {
       gameOver();
