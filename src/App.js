@@ -1,5 +1,5 @@
 import React from 'react';
-import GameBoard from './Components/GameBoard/GameBoard';
+import { GameBoard } from './Components/GameBoard/GameBoard';
 import './App.css';
 
 const App = () => {
@@ -10,5 +10,6 @@ const App = () => {
     </div>
   );
 }
+
 
 export default App;

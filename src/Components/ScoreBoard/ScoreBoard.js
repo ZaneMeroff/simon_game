@@ -1,7 +1,7 @@
 import React from 'react';
 import './ScoreBoard.css';
 
-const ScoreBoard = props => {
+export const ScoreBoard = props => {
 
   return (
     <div className="scoreboard-outer-container">
@@ -14,5 +14,3 @@ const ScoreBoard = props => {
   );
 
 }
-
-export default ScoreBoard;

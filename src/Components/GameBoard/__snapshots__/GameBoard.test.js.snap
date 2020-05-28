@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameBoard should match the snapshot 1`] = `
+<section>
+  <ScoreBoard
+    playerClickDisplay={0}
+    randomNumArray={Array []}
+    roundCount={0}
+    startGame={[Function]}
+  />
+  <div
+    className="gameboard-outer-container"
+  >
+    <div
+      className="center-circle"
+    >
+      <p
+        className="turn-text-1"
+      />
+      <p
+        className="turn-text-2"
+      />
+    </div>
+    <div
+      className="top-section disabled"
+    >
+      <div
+        className="red-box"
+        onClick={[Function]}
+      />
+      <div
+        className="yellow-box"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="bottom-section disabled"
+    >
+      <div
+        className="green-box"
+        onClick={[Function]}
+      />
+      <div
+        className="blue-box"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+</section>
+`;
