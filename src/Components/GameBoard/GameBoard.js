@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import { ScoreBoard } from '../ScoreBoard/ScoreBoard';
 import './GameBoard.css';
 
 let randomNumArray = [];
@@ -8,7 +8,7 @@ let playerClickCounter = 0;
 let roundCount = 0;
 let j;
 
-const GameBoard = () => {
+export const GameBoard = () => {
 
   const [redActive, setRedActive] = useState(false);
   const [yellowActive, setYellowActive] = useState(false);
@@ -142,5 +142,3 @@ const GameBoard = () => {
   );
 
 }
-
-export default GameBoard;
