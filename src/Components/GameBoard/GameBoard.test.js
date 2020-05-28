@@ -14,8 +14,4 @@ describe('GameBoard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('startGame', () => {
-    
-  });
-
 });
