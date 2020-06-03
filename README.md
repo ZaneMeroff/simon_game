@@ -5,7 +5,7 @@ a virtual recreation on the classic 1978 game by Milton Bradley
 https://zanemeroff.github.io/simon_game
 
 #### Introduction
-This game is a virtual recreation of the electronic handheld game by Milton Bradley. I built this project for fun shortly after graduating from the Turing School of Software and Design. It is written using ReactJS and includes snapshot render tests for every component using Jest with Enzyme. Feel free to reach out with any suggestions or comments —Good luck!
+This game is a virtual recreation of the electronic handheld game by Milton Bradley. I built this project for fun shortly after graduating from the Turing School of Software and Design. It is written using ReactJS with Hooks and includes snapshot render tests for every component using Jest with Enzyme. Feel free to reach out with any suggestions or comments —Good luck!
 
 #### Screenshot
 ![screenshot](https://user-images.githubusercontent.com/53405028/83286817-d42edd80-a19d-11ea-87e9-5f02c5549554.png)
