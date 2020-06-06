@@ -18,6 +18,8 @@ export const GameBoard = () => {
   const [turnText, setTurnText] = useState('');
   const [playerClickDisplay, setPlayerClickDisplay] = useState(0);
   const [disableButtons, setDisableButtons] = useState(true);
+  const [rulesVisible, setRulesVisible] = useState(false);
+  const [gameBoardVisible, setGameBoardVisible] = useState(true);
 
   const colorKey = {
     0 : setRedActive,
@@ -35,6 +37,16 @@ export const GameBoard = () => {
     setMyOrYours('MY');
     setTurnText('TURN!');
     nextRound();
+  }
+
+  const onViewRulesClick = () => {
+    if (!rulesVisible) {
+      setRulesVisible(true)
+      setGameBoardVisible(false)
+    } else {
+      setRulesVisible(false)
+      setGameBoardVisible(true)
+    }
   }
 
   const validateAnswer = () => {
@@ -91,7 +103,7 @@ export const GameBoard = () => {
 
   const makeColorFlash = i => {
     setTimeout(() => {
-      if (i % 2 !== 0) {
+      if (i % 2) {
         colorKey[randomNumArray[Math.floor(j)]](true)
       } else {
         colorKey[randomNumArray[Math.floor(j)]](false)
@@ -123,19 +135,28 @@ export const GameBoard = () => {
 
   return (
     <section>
-      <ScoreBoard roundCount={roundCount} startGame={startGame} playerClickDisplay={playerClickDisplay} randomNumArray={randomNumArray}/>
-      <div className="gameboard-outer-container">
+      <ScoreBoard roundCount={roundCount} startGame={startGame} playerClickDisplay={playerClickDisplay} randomNumArray={randomNumArray} onViewRulesClick={onViewRulesClick} rulesVisible={rulesVisible}/>
+      <div className={ rulesVisible ? 'rules-outer-container' : 'hidden' }>
+        <div className='rules-inner-container'>
+          <p className='rules-text'>
+            It's you against Mr. Simon! When the game starts, Simon will create a color
+            pattern that grows with each round. Your challenge is to match Simon's pattern
+            by selecting the glowing lights in the correct order.
+          </p>
+        </div>
+      </div>
+      <div className={ gameBoardVisible ? 'gameboard-outer-container' : 'hidden' }>
         <div className='center-circle'>
           <p className='turn-text-1'>{myOrYours}</p>
           <p className='turn-text-2'>{turnText}</p>
         </div>
         <div className={ disableButtons ? 'top-section disabled' : 'top-section' }>
-          <div onClick={() => handlePlayerResponse(0)} className={ redActive ? 'red-box red-active' : 'red-box' }></div>
-          <div onClick={() => handlePlayerResponse(1)} className={ yellowActive ? 'yellow-box yellow-active' : 'yellow-box' }></div>
+          <button aria-label='red button' onClick={() => handlePlayerResponse(0)} className={ redActive ? 'red-box red-active' : 'red-box' }></button>
+          <button aria-label='yellow button' onClick={() => handlePlayerResponse(1)} className={ yellowActive ? 'yellow-box yellow-active' : 'yellow-box' }></button>
         </div>
         <div className={ disableButtons ? 'bottom-section disabled' : 'bottom-section' }>
-          <div onClick={() => handlePlayerResponse(2)} className={ greenActive ? 'green-box green-active' : 'green-box' }></div>
-          <div onClick={() => handlePlayerResponse(3)} className={ blueActive ? 'blue-box blue-active' : 'blue-box' }></div>
+          <button aria-label='green button' onClick={() => handlePlayerResponse(2)} className={ greenActive ? 'green-box green-active' : 'green-box' }></button>
+          <button aria-label='blue button' onClick={() => handlePlayerResponse(3)} className={ blueActive ? 'blue-box blue-active' : 'blue-box' }></button>
         </div>
       </div>
     </section>

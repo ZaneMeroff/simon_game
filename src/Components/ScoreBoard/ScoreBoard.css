@@ -1,40 +1,50 @@
 .scoreboard-outer-container {
-  width: auto;
+  align-items: center;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  width: auto;
 }
 
-.new-game-button {
-  height: 50px;
-  width: 100px;
-  border: 3px dotted #FFF;
+.game-button {
   background-color: #232323;
+  border: 2px dotted #FFF;
   color: #FFF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 70%;
+  height: auto;
+  margin: 5px 0px;
   outline: none;
-  margin-left: 30px;
-  margin-right: 30px;
-  font-size: 100%;
+  padding: 4px;
+  width: 150px;
 }
 
-.new-game-button:hover {
-  cursor: pointer;
-  color: #232323;
+.game-button:hover,
+.game-button:focus {
   background-color: #FFF;
-  border: 3px dotted #232323;
+  border: 2px dotted #232323;
+  color: #232323;
+  cursor: pointer;
 }
 
 .round-display {
   color: #FFF;
-  margin-right: 30px;
-  margin-left: 30px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 100%;
+  font-size: 70%;
+  margin: 8px 30px 8px 20px;
 }
 
 .round-moves-container {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+}
+
+.score-board-button-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
 }
