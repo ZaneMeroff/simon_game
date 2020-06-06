@@ -8,7 +8,7 @@ https://zanemeroff.github.io/simon_game
 This game is a virtual recreation of the electronic handheld game by Milton Bradley. I built this project for fun shortly after graduating from the Turing School of Software and Design. It is written using ReactJS with Hooks and includes snapshot render tests for every component using Jest with Enzyme. Feel free to reach out with any suggestions or comments —Good luck!
 
 #### Screenshot
-![screenshot](https://user-images.githubusercontent.com/53405028/83286817-d42edd80-a19d-11ea-87e9-5f02c5549554.png)
+![screenshot](https://user-images.githubusercontent.com/53405028/83951337-0370ca80-a7ee-11ea-90e4-0b5a3a3ba0a8.png)
 
 #### Directions for Use
 - It's you against Mr. Simon! Upon clicking the "START GAME" button, Mr. Simon will make his first move indicated by the glowing light.
