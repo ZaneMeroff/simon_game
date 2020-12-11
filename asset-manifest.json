@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simon_game/static/css/main.1129231a.chunk.css",
+    "main.css": "/simon_game/static/css/main.68035431.chunk.css",
     "main.js": "/simon_game/static/js/main.37696d32.chunk.js",
     "main.js.map": "/simon_game/static/js/main.37696d32.chunk.js.map",
     "runtime-main.js": "/simon_game/static/js/runtime-main.bbbef8f8.js",
@@ -8,15 +8,15 @@
     "static/js/2.7e7e74ab.chunk.js": "/simon_game/static/js/2.7e7e74ab.chunk.js",
     "static/js/2.7e7e74ab.chunk.js.map": "/simon_game/static/js/2.7e7e74ab.chunk.js.map",
     "index.html": "/simon_game/index.html",
-    "precache-manifest.7c828a8d627b9d557821862e1d268f9f.js": "/simon_game/precache-manifest.7c828a8d627b9d557821862e1d268f9f.js",
+    "precache-manifest.8cf0864039c0537429a49f4d8433bc8a.js": "/simon_game/precache-manifest.8cf0864039c0537429a49f4d8433bc8a.js",
     "service-worker.js": "/simon_game/service-worker.js",
-    "static/css/main.1129231a.chunk.css.map": "/simon_game/static/css/main.1129231a.chunk.css.map",
+    "static/css/main.68035431.chunk.css.map": "/simon_game/static/css/main.68035431.chunk.css.map",
     "static/js/2.7e7e74ab.chunk.js.LICENSE.txt": "/simon_game/static/js/2.7e7e74ab.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bbbef8f8.js",
     "static/js/2.7e7e74ab.chunk.js",
-    "static/css/main.1129231a.chunk.css",
+    "static/css/main.68035431.chunk.css",
     "static/js/main.37696d32.chunk.js"
   ]
 }
