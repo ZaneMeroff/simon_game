@@ -139,9 +139,9 @@ export const GameBoard = () => {
       <div className={ rulesVisible ? 'rules-outer-container' : 'hidden' }>
         <div className='rules-inner-container'>
           <p className='rules-text'>
-            It's you against Mr. Simon! When the game starts, Simon will create a color
-            pattern that grows with each round. Your challenge is to match Simon's pattern
-            by selecting the glowing lights in the correct order.
+          It's you against Mr. Simon. When the game starts, Simon will create a color
+          pattern that grows with each round. Your challenge is to match Simon's pattern
+          by selecting the glowing lights in the correct order. Finish round 10 to win!
           </p>
         </div>
       </div>
