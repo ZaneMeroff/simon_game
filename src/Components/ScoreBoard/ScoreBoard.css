@@ -1,8 +1,7 @@
 .scoreboard-outer-container {
   align-items: center;
   display: flex;
-  justify-content: space-around;
-  width: auto;
+  width: 345px;
 }
 
 .game-button {
