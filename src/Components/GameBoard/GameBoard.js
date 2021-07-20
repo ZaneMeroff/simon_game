@@ -20,6 +20,7 @@ export const GameBoard = () => {
   const [disableButtons, setDisableButtons] = useState(true);
   const [rulesVisible, setRulesVisible] = useState(false);
   const [gameBoardVisible, setGameBoardVisible] = useState(true);
+  const [disableScoreBoard, setDisableScoreBoard] = useState(false);
 
   const colorKey = {
     0 : setRedActive,
@@ -37,6 +38,7 @@ export const GameBoard = () => {
     setMyOrYours('MY');
     setTurnText('TURN!');
     nextRound();
+    setDisableScoreBoard(true);
   }
 
   const onViewRulesClick = () => {
@@ -67,12 +69,14 @@ export const GameBoard = () => {
     setMyOrYours('GAME');
     setTurnText('OVER!');
     setDisableButtons(true);
+    setDisableScoreBoard(false);
   }
 
   const onCorrectRoundGuess = () => {
     setMyOrYours('RIGHT!');
     setTurnText('');
     setDisableButtons(true);
+    setDisableScoreBoard(true);
     playerResponse = [];
     setTimeout(() => {
       nextRound();
@@ -112,6 +116,7 @@ export const GameBoard = () => {
       if (i === (roundCount * 2)) {
         setMyOrYours('YOUR');
         setDisableButtons(false);
+        setDisableScoreBoard(false);
       }
     }, i * 800 );
   }
@@ -135,7 +140,7 @@ export const GameBoard = () => {
 
   return (
     <section>
-      <ScoreBoard roundCount={roundCount} startGame={startGame} playerClickDisplay={playerClickDisplay} randomNumArray={randomNumArray} onViewRulesClick={onViewRulesClick} rulesVisible={rulesVisible}/>
+      <ScoreBoard roundCount={roundCount} startGame={startGame} disableScoreBoard={disableScoreBoard} playerClickDisplay={playerClickDisplay} randomNumArray={randomNumArray} onViewRulesClick={onViewRulesClick} rulesVisible={rulesVisible}/>
       <div className={ rulesVisible ? 'rules-outer-container' : 'hidden' }>
         <div className='rules-inner-container'>
           <p className='rules-text'>

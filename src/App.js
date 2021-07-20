@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     document.addEventListener('touchstart', () => {}, false);
-  })
+  });
 
   return (
     <div className="App">
